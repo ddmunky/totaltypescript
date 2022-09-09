@@ -1,22 +1,22 @@
-import { expect, it } from "vitest";
+import { expect, it } from 'vitest';
 
 interface User {
-  id: number;
-  firstName: string;
-  lastName: string;
-  isAdmin: boolean;
+    id: number;
+    firstName: string;
+    lastName: string;
+    isAdmin: boolean;
 }
 
 /**
  * How do we ensure that defaultUser is of type User
  * at THIS LINE - not further down in the code?
  */
-const defaultUser = {};
+const defaultUser: User = { id: 1, firstName: 'Matt', lastName: 'Pocock', isAdmin: true };
 
 const getUserId = (user: User) => {
-  return user.id;
+    return user.id;
 };
 
-it("Should get the user id", () => {
-  expect(getUserId(defaultUser)).toEqual(1);
+it('Should get the user id', () => {
+    expect(getUserId(defaultUser)).toEqual(1);
 });
